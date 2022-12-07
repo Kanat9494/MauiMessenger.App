@@ -7,5 +7,6 @@ global using System.Windows.Input;
 global using ServiceProvider = MauiMessenger.Services.ServiceProvider;
 global using MauiMessenger.ViewModels;
 global using System.Collections.ObjectModel;
+global using MauiMessenger.Models;
 
 

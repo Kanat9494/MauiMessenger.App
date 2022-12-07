@@ -11,20 +11,15 @@ public class ChatsViewModel : INotifyPropertyChanged
 
     public ChatsViewModel()
     {
-        UserFriends = new ObservableCollection<string>();
-        LastestMessages = new ObservableCollection<string>();
-
-        for (int i = 0; i < 15; i++)
-        {
-            UserFriends.Add(i.ToString());
-            LastestMessages.Add(i.ToString());
-        }
+        UserFriends = new ObservableCollection<ChatUser>();
+        LastestMessages = new ObservableCollection<LastestMessage>();
     }
 
-    private ObservableCollection<string> userFriends;
-    private ObservableCollection<string> lastestMessages;
+    private ChatUser userInfo;
+    private ObservableCollection<ChatUser> userFriends;
+    private ObservableCollection<LastestMessage> lastestMessages;
 
-    public ObservableCollection<string> UserFriends
+    public ObservableCollection<ChatUser> UserFriends
     {
         get => userFriends;
         set
@@ -34,12 +29,22 @@ public class ChatsViewModel : INotifyPropertyChanged
         }
     }
 
-    public ObservableCollection<string> LastestMessages
+    public ObservableCollection<LastestMessage> LastestMessages
     {
         get => lastestMessages;
         set
         {
             lastestMessages = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public ChatUser UserInfo
+    {
+        get => userInfo;
+        set
+        {
+            userInfo = value;
             OnPropertyChanged();
         }
     }
