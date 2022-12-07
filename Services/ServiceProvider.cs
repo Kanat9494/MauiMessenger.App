@@ -3,7 +3,7 @@
 public class ServiceProvider
 {
     private static ServiceProvider _instance;
-    private const string _serverRootUrl = "http://192.168.2.33:8080";
+    private const string _serverRootUrl = "http://localhost:5266";
     public string _accessToken = "";
     private ServiceProvider() { }
 
@@ -21,7 +21,7 @@ public class ServiceProvider
         {
             var httpRequestMessage = new HttpRequestMessage();
             httpRequestMessage.Method = HttpMethod.Post;
-            httpRequestMessage.RequestUri = new Uri(_serverRootUrl + "/api/Authenticate/AuthenticateUser");
+            httpRequestMessage.RequestUri = new Uri(_serverRootUrl + "/api/Authentication/AuthenticateUser");
 
             if (request != null)
             {

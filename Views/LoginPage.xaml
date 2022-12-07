@@ -45,5 +45,8 @@
                 <Label Margin="5,0,0,0" Text="Зарегистрируйтесь тогда" TextColor="#1e90ff"/>
             </HorizontalStackLayout>
         </VerticalStackLayout>
+
+        <ActivityIndicator HeightRequest="60" WidthRequest="60" IsRunning="{Binding IsProcessing}"
+                           Color="#00e600"/>
     </Grid>
 </ContentPage>
