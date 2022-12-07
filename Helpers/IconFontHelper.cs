@@ -1,4 +1,4 @@
-﻿namespace MauiMessenger.Helper;
+﻿namespace MauiMessenger.Helpers;
 
 static class IconFontHelper
 {
