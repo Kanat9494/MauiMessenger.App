@@ -2,11 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiMessenger.Views.ChatsPage"
-             Background="#13232f"
-             NavigatedTo="ContentPage_NavigatedTo"
+             Background="Black"
+             xmlns:viewModels="clr-namespace:MauiMessenger.ViewModels"
              xmlns:helper="clr-namespace:MauiMessenger.Helpers"
              Title="Чаты">
 
+    <!--NavigatedTo="ContentPage_NavigatedTo"-->
     <ContentPage.IconImageSource>
         <FontImageSource
             FontFamily="IconFontTypes"
@@ -147,7 +148,7 @@
                                         Source="{Binding AvatarSourceName}"
                                         WidthRequest="54">
                                         <Image.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Path=OpenChatPageCommand, Source={RelativeSource AncestorType={x:Type viewModels:ListChatPageViewModel}}}" CommandParameter="{Binding Id}" />
+                                            <TapGestureRecognizer Command="{Binding Path=OpenChatPageCommand, Source={RelativeSource AncestorType={x:Type viewModels:ChatsViewModel}}}" CommandParameter="{Binding Id}" />
                                         </Image.GestureRecognizers>
                                     </Image>
                                     <Ellipse
@@ -199,7 +200,7 @@
                         <ViewCell>
                             <HorizontalStackLayout>
                                 <HorizontalStackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Path=OpenChatPageCommand, Source={RelativeSource AncestorType={x:Type viewModels:ListChatPageViewModel}}}" CommandParameter="{Binding UserFriendInfo.Id}" />
+                                    <TapGestureRecognizer Command="{Binding Path=OpenChatPageCommand, Source={RelativeSource AncestorType={x:Type viewModels:ChatsViewModel}}}" CommandParameter="{Binding UserFriendInfo.Id}" />
                                 </HorizontalStackLayout.GestureRecognizers>
                                 <Grid HeightRequest="54" WidthRequest="58">
                                     <Image

@@ -9,8 +9,8 @@ public partial class ChatsPage : ContentPage
 		this.BindingContext = new ChatsViewModel();
 	}
 
-    private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
-    {
-        (this.BindingContext as ListChatPageViewModel).Initialize();
-    }
+    //private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
+    //{
+    //    (this.BindingContext as ChatsViewModel).Initialize();
+    //}
 }
