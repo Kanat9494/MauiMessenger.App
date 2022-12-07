@@ -21,8 +21,28 @@
 
             <Label Margin="0,10,0,0" Text="Забыли пароль?" TextColor="#1e90ff"/>
 
-            <Button Text="Войти" Background="#00e600" Margin="0,30,0,0"/> 
-            
+            <Button Text="Войти" Background="#00e600" Margin="0,30,0,0"/>
+
+            <HorizontalStackLayout Margin="0,50,0,0" HorizontalOptions="Center">
+                <Line BackgroundColor="Gray" HeightRequest="0.5" WidthRequest="60"/>
+                <Label Margin="10,0,10,0" Text="Или продолжить с"/>
+                <Line BackgroundColor="Gray" HeightRequest="0.5" WidthRequest="60"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Margin="0,30,0,0" HorizontalOptions="Center">
+                <Frame Padding="15,10,15,10">
+                    <Image HeightRequest="32" Source="google_logo.png" WidthRequest="32"/>
+                </Frame>
+
+                <Frame Padding="15,10,15,10" Margin="20,0,0,0">
+                    <Image HeightRequest="32" Source="apple_logo.png" WidthRequest="32"/>
+                </Frame>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Margin="0,40,0,0" HorizontalOptions="Center">
+                <Label Text="Не логина?"/>
+                <Label Margin="5,0,0,0" Text="Зарегистрируйтесь тогда" TextColor="#1e90ff"/>
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </Grid>
 </ContentPage>

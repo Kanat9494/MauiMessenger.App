@@ -45,6 +45,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\apple_logo.png" />
+	  <None Remove="Resources\Images\google_logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
