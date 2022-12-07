@@ -1,6 +1,4 @@
-﻿using Android.Media;
-
-namespace MauiMessenger.Services;
+﻿namespace MauiMessenger.Services;
 
 public class ServiceProvider
 {
