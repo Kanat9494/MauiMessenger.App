@@ -10,6 +10,7 @@ public class ChatsViewModel : INotifyPropertyChanged, IQueryAttributable
 
     public ChatsViewModel()
     {
+        UserInfo = new ChatUser();
         UserFriends = new ObservableCollection<ChatUser>();
         LastestMessages = new ObservableCollection<LastestMessage>();
     }
@@ -20,18 +21,25 @@ public class ChatsViewModel : INotifyPropertyChanged, IQueryAttributable
 
     async Task GetListFriends()
     {
-        var response = await ServiceProvider.GetInstance().CallWebApi<int, ChatsInitializeResponse>("", HttpMethod.Post,
+        try
+        {
+            var response = await ServiceProvider.GetInstance().CallWebApi<int, ChatsInitializeResponse>("/api/Chat/Initialize", HttpMethod.Post,
             UserInfo.UserId);
 
-        if (response.StatusCode == 200)
-        {
-            UserInfo = response.CurrentUser;
-            UserFriends = new ObservableCollection<ChatUser>(response.UserFriends);
-            LastestMessages = new ObservableCollection<LastestMessage>(response.LastestMessages);
+            if (response.StatusCode == 200)
+            {
+                UserInfo = response.CurrentUser;
+                UserFriends = new ObservableCollection<ChatUser>(response.UserFriends);
+                LastestMessages = new ObservableCollection<LastestMessage>(response.LastestMessages);
+            }
+            else
+            {
+                await AppShell.Current.DisplayAlert("MAUI Чат", response.StatusMessage, "Ок");
+            }
         }
-        else
+        catch (Exception ex)
         {
-            await AppShell.Current.DisplayAlert("MAUI Чат", response.StatusMessage, "Ок");
+
         }
     }
 
@@ -39,7 +47,7 @@ public class ChatsViewModel : INotifyPropertyChanged, IQueryAttributable
     {
         if (query == null || query.Count == 0) return;
 
-        UserInfo.UserId = int.Parse(HttpUtility.UrlDecode(query[""].ToString()));
+        UserInfo.UserId = int.Parse(HttpUtility.UrlDecode(query["userId"].ToString()));
 
         Task.Run(async () =>
         {

@@ -11,8 +11,8 @@ public class LoginViewModel : INotifyPropertyChanged
 
     public LoginViewModel()
     {
-        PhoneNumber = "";
-        Password = "";
+        PhoneNumber = "996708362166";
+        Password = "Abc12345";
         IsProcessing = false;
 
         LoginCommand = new Command(() =>
