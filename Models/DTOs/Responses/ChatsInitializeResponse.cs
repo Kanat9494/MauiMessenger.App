@@ -1,8 +1,8 @@
 ﻿namespace MauiMessenger.Models.DTOs.Responses;
 
-public class ChatInitializeResponse : BaseResponse
+public class ChatsInitializeResponse : BaseResponse
 {
-    public ChatUser ChatUser { get; set; }
+    public ChatUser CurrentUser { get; set; }
     public IEnumerable<ChatUser> UserFriends { get; set; }
     public IEnumerable<LastestMessage> LastestMessages { get; set; }
 }

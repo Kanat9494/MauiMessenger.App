@@ -8,5 +8,7 @@ global using ServiceProvider = MauiMessenger.Services.ServiceProvider;
 global using MauiMessenger.ViewModels;
 global using System.Collections.ObjectModel;
 global using MauiMessenger.Models;
+global using System.Web;
+global using MauiMessenger.Views;
 
 

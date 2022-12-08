@@ -1,7 +1,6 @@
-﻿
-namespace MauiMessenger.ViewModels;
+﻿namespace MauiMessenger.ViewModels;
 
-public class ChatsViewModel : INotifyPropertyChanged
+public class ChatsViewModel : INotifyPropertyChanged, IQueryAttributable
 {
     public event PropertyChangedEventHandler PropertyChanged;
     protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -17,7 +16,36 @@ public class ChatsViewModel : INotifyPropertyChanged
 
     private ChatUser userInfo;
     private ObservableCollection<ChatUser> userFriends;
-    private ObservableCollection<LastestMessage> lastestMessages;
+    private ObservableCollection<LastestMessage> lastestMessages;  
+
+    async Task GetListFriends()
+    {
+        var response = await ServiceProvider.GetInstance().CallWebApi<int, ChatsInitializeResponse>("", HttpMethod.Post,
+            UserInfo.UserId);
+
+        if (response.StatusCode == 200)
+        {
+            UserInfo = response.CurrentUser;
+            UserFriends = new ObservableCollection<ChatUser>(response.UserFriends);
+            LastestMessages = new ObservableCollection<LastestMessage>(response.LastestMessages);
+        }
+        else
+        {
+            await AppShell.Current.DisplayAlert("MAUI Чат", response.StatusMessage, "Ок");
+        }
+    }
+
+    public void ApplyQueryAttributes(IDictionary<string, object> query)
+    {
+        if (query == null || query.Count == 0) return;
+
+        UserInfo.UserId = int.Parse(HttpUtility.UrlDecode(query[""].ToString()));
+
+        Task.Run(async () =>
+        {
+            await GetListFriends();
+        });
+    }
 
     public ObservableCollection<ChatUser> UserFriends
     {

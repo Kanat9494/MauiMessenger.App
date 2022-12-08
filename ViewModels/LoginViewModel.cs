@@ -46,8 +46,7 @@ public class LoginViewModel : INotifyPropertyChanged
             var response = await ServiceProvider.GetInstance().Authenticate(request);
             if (response.StatusCode == 200 || response == null)
             {
-                await AppShell.Current.DisplayAlert("MAUI Чат", $"Вход успешно выполнен!\nЛогин: {response.PhoneNumber}" +
-                    $"\nТокен: {response.Token}", "Ок");
+                await Shell.Current.GoToAsync($"ChatsPage?userId={response.UserId}");
             }
             else
             {

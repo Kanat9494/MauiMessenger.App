@@ -57,4 +57,43 @@ public class ServiceProvider
             }
         }
     }
+
+    public async Task<TResponse> CallWebApi<TRequest, TResponse>(string apiUrl, 
+        HttpMethod httpMethod, TRequest request) where TResponse : BaseResponse
+    {
+        using (HttpClient client = new HttpClient())
+        {
+            var httpRequestMessage = new HttpRequestMessage();
+            httpRequestMessage.Method = HttpMethod.Post;
+            httpRequestMessage.RequestUri = new Uri(_serverRootUrl + apiUrl);
+            httpRequestMessage.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer"
+                + _accessToken);
+
+            if (request != null)
+            {
+                string jsonContent = JsonConvert.SerializeObject(request);
+                var httpContent = new StringContent(jsonContent, encoding: System.Text.Encoding.UTF8, "application/json");
+                httpRequestMessage.Content = httpContent;
+            }
+
+            try
+            {
+                var response = await client.SendAsync(httpRequestMessage);
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                var result = JsonConvert.DeserializeObject<TResponse>(responseContent);
+                result.StatusCode = (int)response.StatusCode;
+                 
+                return result;
+            }
+            catch (Exception ex)
+            {
+                var result = Activator.CreateInstance<TResponse>();
+                result.StatusCode = 500; 
+                result.StatusMessage = ex.Message;
+
+                return result;
+            }
+        }
+    }
 }
