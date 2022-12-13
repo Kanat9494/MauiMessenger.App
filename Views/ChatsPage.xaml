@@ -34,7 +34,7 @@
                         Margin="10,0,0,0"
                         FontAttributes="Bold"
                         FontSize="20"
-                        Text="{Binding UserInfo.UserName}"
+                        Text="{Binding UserInfo.PhoneNumber}"
                         VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout

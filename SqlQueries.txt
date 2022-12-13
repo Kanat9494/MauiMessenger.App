@@ -1,0 +1,88 @@
+﻿----- messages 
+
+GO
+SET IDENTITY_INSERT [Messages] ON 
+
+INSERT Messages (MessageId, [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (2, 1, 2, N'Test Message 1', CAST(N'2022-06-21T00:00:08.0000000' AS DateTime2), 1)
+INSERT Messages([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (4, 1, 2, N'Test Message 2', CAST(N'2022-06-21T00:00:10.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (5, 1, 3, N'Test Message 3', CAST(N'2022-06-21T00:00:00.0000000' AS DateTime2), 1)
+INSERT Messages(MessageId, [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (7, 1, 3, N'Test Message 4', CAST(N'2022-06-21T00:00:15.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (8, 1, 3, N'Test Message 5', CAST(N'2022-06-21T00:01:00.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (11, 1, 5, N'Test Message 6', CAST(N'2022-06-21T00:00:08.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (12, 1, 6, N'Test Message 7', CAST(N'2022-06-21T00:00:08.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (13, 1, 7, N'Test Message 8', CAST(N'2022-06-21T00:00:08.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (14, 1, 8, N'Test Message 9', CAST(N'2022-06-21T00:00:08.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (15, 1, 9, N'Test Message 10', CAST(N'2022-06-21T00:00:08.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (16, 1, 10, N'Test Message 11', CAST(N'2022-06-21T00:00:08.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (17, 1, 11, N'Test Message 12', CAST(N'2022-06-21T00:00:08.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (18, 1, 12, N'Test Message 13', CAST(N'2022-06-21T00:08:08.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1011, 1, 2, N'Test Message 14', CAST(N'2022-06-21T00:09:00.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1012, 2, 1, N'Test Message 15', CAST(N'2022-06-21T00:10:10.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1014, 1, 2, N'Test Message 16', CAST(N'2022-06-21T00:15:15.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1015, 1, 2, N'Test Message 17', CAST(N'2022-06-21T00:16:00.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1016, 2, 1, N'Test Message 18', CAST(N'2022-06-21T00:17:10.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1017, 1, 2, N'Test Message 19', CAST(N'2022-06-21T00:18:15.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1018, 1, 2, N'Test Message 20', CAST(N'2022-06-21T00:19:00.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1019, 2, 1, N'Test Message 21', CAST(N'2022-06-21T00:20:10.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1020, 1, 2, N'Test Message 22', CAST(N'2022-06-21T00:21:15.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1021, 1, 2, N'Test Message 23', CAST(N'2022-06-21T00:22:00.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1022, 2, 1, N'Test Message 24', CAST(N'2022-06-21T00:23:10.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1023, 1, 2, N'Test Message 25', CAST(N'2022-06-21T00:24:15.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1024, 1, 2, N'Test Message 26', CAST(N'2022-06-21T00:25:00.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1025, 2, 1, N'Test Message 27', CAST(N'2022-06-21T00:26:10.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1026, 1, 2, N'Test Message 28', CAST(N'2022-06-21T00:27:15.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1027, 1, 2, N'Test Message 29', CAST(N'2022-06-21T00:28:00.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1028, 2, 1, N'Test Message 30', CAST(N'2022-06-21T00:29:10.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1029, 1, 2, N'Test Message 31', CAST(N'2022-06-21T00:30:15.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1030, 1, 2, N'Test Message 32', CAST(N'2022-06-21T00:31:00.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1031, 2, 1, N'Test Message 33', CAST(N'2022-06-21T00:32:10.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1032, 1, 2, N'Test Message 34', CAST(N'2022-06-21T00:33:15.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1033, 1, 2, N'Test Message 35', CAST(N'2022-06-21T00:34:00.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1034, 2, 1, N'Test Message 36', CAST(N'2022-06-21T00:35:10.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1035, 1, 2, N'Test Message 37', CAST(N'2022-06-21T00:36:15.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1036, 1, 2, N'Test Message 38', CAST(N'2022-06-21T00:38:00.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1037, 2, 1, N'Test Message 39', CAST(N'2022-06-21T00:59:10.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1038, 1, 2, N'Test Message 40', CAST(N'2022-06-21T01:15:15.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1039, 1, 2, N'Test Message 41', CAST(N'2022-06-21T01:30:00.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1040, 2, 1, N'Test Message 42', CAST(N'2022-06-21T01:31:10.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (1041, 1, 2, N'Test Message 43', CAST(N'2022-06-21T01:40:15.0000000' AS DateTime2), 1)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (2015, 1, 2, N'Test Message 44', CAST(N'2022-06-26T01:38:55.1507937' AS DateTime2), 0)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (2016, 1, 2, N'Test Message 45', CAST(N'2022-06-26T02:00:51.3232316' AS DateTime2), 0)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (2017, 1, 2, N'Test Message 46', CAST(N'2022-06-26T02:22:32.0326661' AS DateTime2), 0)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (2018, 1, 2, N'Test Message 47', CAST(N'2022-06-26T02:26:22.9367657' AS DateTime2), 0)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (2019, 1, 2, N'Test Message 48', CAST(N'2022-06-26T02:26:42.8137256' AS DateTime2), 0)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (2020, 1, 2, N'Test Message 49', CAST(N'2022-06-26T02:28:09.1566705' AS DateTime2), 0)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (2021, 2, 1, N'Test Message 50', CAST(N'2022-06-26T02:28:23.9460685' AS DateTime2), 0)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (3041, 3, 2, N'Hello', CAST(N'2022-07-09T18:51:12.5389368' AS DateTime2), 0)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (3042, 2, 3, N'Hi', CAST(N'2022-07-09T18:51:18.5101808' AS DateTime2), 0)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (3043, 2, 3, N'How are you today?', CAST(N'2022-07-09T18:51:28.4243208' AS DateTime2), 0)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (3044, 3, 2, N'I''m fine', CAST(N'2022-07-09T18:51:37.2068324' AS DateTime2), 0)
+INSERT Messages ([MessageId], [FromUserId], [ToUserId], [Content], [SentDateTime], [IsRead]) VALUES (3045, 3, 2, N'Thanks', CAST(N'2022-07-09T18:51:40.6768087' AS DateTime2), 0)
+SET IDENTITY_INSERT Messages OFF
+GO
+
+----- end messages
+
+
+
+----- chatusers
+
+GO
+SET IDENTITY_INSERT ChatUsers ON 
+
+INSERT ChatUsers ([UserId], PhoneNumber, [Password], [StoredSalt], [AvatarSourceName], [IsOnline], [LastLogonTime]) VALUES (1, N'996708362166', N'2ge6k1pho5cHai5o6/qyJldJpl70nJFfVID1+5ilWHQ=', 0x766DF6E2ED57DF15738FE20CA93BD8B9, N'wanda.png', 0, CAST(N'2022-06-22T00:00:00.0000000' AS DateTime2))
+INSERT ChatUsers ([UserId], [PhoneNumber], [Password], [StoredSalt], [AvatarSourceName], [IsOnline], [LastLogonTime]) VALUES (2, N'996705223366', N'8wxDKnlxmyDTkn9nHQ/F5FMNZQ5NlJObBBJ0gQiBcVw=', 0x1597B9D43AD62BD0D12DA3739C2873F9, N'hulk.png', 0, CAST(N'2022-07-03T00:00:00.0000000' AS DateTime2))
+INSERT ChatUsers ([UserId], [PhoneNumber], [Password], [StoredSalt], [AvatarSourceName], [IsOnline], [LastLogonTime]) VALUES (3, N'996555151515', N'2ge6k1pho5cHai5o6/qyJldJpl70nJFfVID1+5ilWHQ=', 0x766DF6E2ED57DF15738FE20CA93BD8B9, N'thanos.png', 0, CAST(N'2022-07-02T23:00:00.0000000' AS DateTime2))
+INSERT ChatUsers ([UserId], [PhoneNumber], [Password], [StoredSalt], [AvatarSourceName], [IsOnline], [LastLogonTime]) VALUES (4, N'996551151515', N'8wxDKnlxmyDTkn9nHQ/F5FMNZQ5NlJObBBJ0gQiBcVw=', 0x1597B9D43AD62BD0D12DA3739C2873F9, N'tony_stark.png', 0, CAST(N'2022-07-01T00:00:00.0000000' AS DateTime2))
+INSERT ChatUsers ([UserId], [PhoneNumber], [Password], [StoredSalt], [AvatarSourceName], [IsOnline], [LastLogonTime]) VALUES (5, N'996550781515', N'2ge6k1pho5cHai5o6/qyJldJpl70nJFfVID1+5ilWHQ=', 0x766DF6E2ED57DF15738FE20CA93BD8B9, N'ant_man.png', 1, CAST(N'2022-06-22T00:00:00.0000000' AS DateTime2))
+INSERT ChatUsers ([UserId], [PhoneNumber], [Password], [StoredSalt], [AvatarSourceName], [IsOnline], [LastLogonTime]) VALUES (6, N'996705232323', N'8wxDKnlxmyDTkn9nHQ/F5FMNZQ5NlJObBBJ0gQiBcVw=', 0x1597B9D43AD62BD0D12DA3739C2873F9, N'black_panther.png', 0, CAST(N'2022-06-22T00:00:00.0000000' AS DateTime2))
+INSERT ChatUsers ([UserId], [PhoneNumber], [Password], [StoredSalt], [AvatarSourceName], [IsOnline], [LastLogonTime]) VALUES (7, N'996555001122', N'2ge6k1pho5cHai5o6/qyJldJpl70nJFfVID1+5ilWHQ=', 0x766DF6E2ED57DF15738FE20CA93BD8B9, N'black_widow.png', 0, CAST(N'2022-06-21T23:00:00.0000000' AS DateTime2))
+INSERT ChatUsers ([UserId], [PhoneNumber], [Password], [StoredSalt], [AvatarSourceName], [IsOnline], [LastLogonTime]) VALUES (8, N'996700434343', N'8wxDKnlxmyDTkn9nHQ/F5FMNZQ5NlJObBBJ0gQiBcVw=', 0x1597B9D43AD62BD0D12DA3739C2873F9, N'falcon.png', 0, CAST(N'2022-06-21T23:15:00.0000000' AS DateTime2))
+INSERT ChatUsers ([UserId], [PhoneNumber], [Password], [StoredSalt], [AvatarSourceName], [IsOnline], [LastLogonTime]) VALUES (9, N'996700232323', N'2ge6k1pho5cHai5o6/qyJldJpl70nJFfVID1+5ilWHQ=', 0x766DF6E2ED57DF15738FE20CA93BD8B9, N'loki.png', 0, CAST(N'2022-06-22T00:00:00.0000000' AS DateTime2))
+INSERT ChatUsers ([UserId], [PhoneNumber], [Password], [StoredSalt], [AvatarSourceName], [IsOnline], [LastLogonTime]) VALUES (10, N'996222342424', N'8wxDKnlxmyDTkn9nHQ/F5FMNZQ5NlJObBBJ0gQiBcVw=', 0x1597B9D43AD62BD0D12DA3739C2873F9, N'rocket.png', 0, CAST(N'2022-06-22T00:00:00.0000000' AS DateTime2))
+INSERT ChatUsers ([UserId], [PhoneNumber], [Password], [StoredSalt], [AvatarSourceName], [IsOnline], [LastLogonTime]) VALUES (11, N'996777151515', N'2ge6k1pho5cHai5o6/qyJldJpl70nJFfVID1+5ilWHQ=', 0x766DF6E2ED57DF15738FE20CA93BD8B9, N'spider_man.png', 0, CAST(N'2022-06-21T23:00:00.0000000' AS DateTime2))
+INSERT ChatUsers ([UserId], [PhoneNumber], [Password], [StoredSalt], [AvatarSourceName], [IsOnline], [LastLogonTime]) VALUES (12, N'996555020232', N'8wxDKnlxmyDTkn9nHQ/F5FMNZQ5NlJObBBJ0gQiBcVw=', 0x1597B9D43AD62BD0D12DA3739C2873F9, N'vision.png', 0, CAST(N'2022-06-21T23:15:00.0000000' AS DateTime2))
+SET IDENTITY_INSERT ChatUsers OFF
+GO
+
+----- end chatusers
