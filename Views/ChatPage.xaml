@@ -81,7 +81,7 @@
                                 Margin="5,0,5,0"
                                 FontSize="11"
                                 HorizontalOptions="{Binding HorizontalOptions, Source={RelativeSource AncestorType={x:Type VerticalStackLayout}}}"
-                                Text="{Binding SendDateTime, StringFormat='{0:HH:mm}'}" />
+                                Text="{Binding SentDateTime, StringFormat='{0:HH:mm}'}" />
 
                             <Frame Padding="10,6,10,6" CornerRadius="10">
                                 <!--<Frame.BackgroundColor>

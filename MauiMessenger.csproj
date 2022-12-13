@@ -78,6 +78,7 @@
 	<ItemGroup>
 	  <Folder Include="Services\Authenticate\" />
 	  <Folder Include="Services\Chats\" />
+	  <Folder Include="Services\Message\" />
 	</ItemGroup>
 
 	<ItemGroup>

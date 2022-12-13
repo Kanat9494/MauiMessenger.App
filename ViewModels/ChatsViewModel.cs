@@ -17,7 +17,8 @@ public class ChatsViewModel : INotifyPropertyChanged, IQueryAttributable
 
     private ChatUser userInfo;
     private ObservableCollection<ChatUser> userFriends;
-    private ObservableCollection<LastestMessage> lastestMessages;  
+    private ObservableCollection<LastestMessage> lastestMessages;
+    private bool isRefreshing;
 
     async Task GetListFriends()
     {
@@ -51,7 +52,11 @@ public class ChatsViewModel : INotifyPropertyChanged, IQueryAttributable
 
         Task.Run(async () =>
         {
+            IsRefreshing = true;
             await GetListFriends();
+        }).GetAwaiter().OnCompleted(() =>
+        {
+            IsRefreshing = false;
         });
     }
 
@@ -84,4 +89,16 @@ public class ChatsViewModel : INotifyPropertyChanged, IQueryAttributable
             OnPropertyChanged();
         }
     }
+
+    public bool IsRefreshing
+    {
+        get => isRefreshing;
+        set
+        {
+            isRefreshing = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public ICommand RefreshCommand { get; set; }
 }
