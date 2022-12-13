@@ -2,10 +2,12 @@
 
 public partial class AppShell : Shell
 {
-	public AppShell()
+	public AppShell(LoginPage loginPage)
 	{
 		InitializeComponent();
 
 		Routing.RegisterRoute("ChatsPage", typeof(ChatsPage));
+
+		this.CurrentItem = loginPage;
 	}
 }

@@ -14,6 +14,13 @@ public static class MauiProgram
                 fonts.AddFont("MaterialIcons-Regular.ttf", "IconFontTypes");
             });
 
+		builder.Services.AddSingleton<AppShell>();
+		builder.Services.AddSingleton<LoginPage>();
+		builder.Services.AddSingleton<ChatsPage>();
+		builder.Services.AddSingleton<LoginViewModel>();
+		builder.Services.AddSingleton<ChatsViewModel>();
+		builder.Services.AddSingleton<ServiceProvider>();
+
 		return builder.Build();
 	}
 }
