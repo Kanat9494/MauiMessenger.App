@@ -2,7 +2,7 @@
 
 public class ChatsInitializeResponse : BaseResponse
 {
-    public ChatUser CurrentUser { get; set; }
+    public ChatUser User { get; set; }
     public IEnumerable<ChatUser> UserFriends { get; set; }
     public IEnumerable<LastestMessage> LastestMessages { get; set; }
 }

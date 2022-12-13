@@ -182,7 +182,7 @@
                                     FontSize="12"
                                     HorizontalOptions="Center"
                                     HorizontalTextAlignment="Center"
-                                    Text="{Binding UserName}" />
+                                    Text="{Binding PhoneNumber}" />
                             </VerticalStackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
@@ -243,7 +243,7 @@
                                         FontSize="17"
                                         HorizontalOptions="Start"
                                         HorizontalTextAlignment="Start"
-                                        Text="{Binding UserFriendInfo.UserName}"
+                                        Text="{Binding UserFriendInfo.PhoneNumber}"
                                         VerticalOptions="Center" />
 
                                     <Label

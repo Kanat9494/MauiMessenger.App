@@ -28,7 +28,7 @@ public class ChatsViewModel : INotifyPropertyChanged, IQueryAttributable
 
             if (response.StatusCode == 200)
             {
-                UserInfo = response.CurrentUser;
+                UserInfo = response.User;
                 UserFriends = new ObservableCollection<ChatUser>(response.UserFriends);
                 LastestMessages = new ObservableCollection<LastestMessage>(response.LastestMessages);
             }
