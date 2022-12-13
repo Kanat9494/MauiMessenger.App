@@ -17,7 +17,8 @@ public static class MauiProgram
 		builder.Services.AddSingleton<AppShell>();
 		builder.Services.AddSingleton<LoginPage>();
 		builder.Services.AddSingleton<ChatsPage>();
-		builder.Services.AddSingleton<LoginViewModel>();
+        builder.Services.AddSingleton<ChatPage>();
+        builder.Services.AddSingleton<LoginViewModel>();
 		builder.Services.AddSingleton<ChatsViewModel>();
 		builder.Services.AddSingleton<ServiceProvider>();
 
