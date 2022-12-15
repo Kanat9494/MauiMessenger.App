@@ -20,6 +20,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<ChatPage>();
         builder.Services.AddSingleton<LoginViewModel>();
 		builder.Services.AddSingleton<ChatsViewModel>();
+		builder.Services.AddSingleton<ChatViewModel>();
 		builder.Services.AddSingleton<ServiceProvider>();
 
 		return builder.Build();

@@ -148,7 +148,7 @@
                                         Source="{Binding AvatarSourceName}"
                                         WidthRequest="54">
                                         <Image.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Path=OpenChatPageCommand, Source={RelativeSource AncestorType={x:Type viewModels:ChatsViewModel}}}" CommandParameter="{Binding Id}" />
+                                            <TapGestureRecognizer Command="{Binding Path=OpenChatPageCommand, Source={RelativeSource AncestorType={x:Type viewModels:ChatsViewModel}}}" CommandParameter="{Binding UserId}" />
                                         </Image.GestureRecognizers>
                                     </Image>
                                     <Ellipse
