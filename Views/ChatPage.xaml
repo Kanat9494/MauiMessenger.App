@@ -4,7 +4,8 @@
              x:Class="MauiMessenger.Views.ChatPage"
              xmlns:helper="clr-namespace:MauiMessenger.Helpers"
              xmlns:viewModel="clr-namespace:MauiMessenger.ViewModels"
-             Title="Чат">
+             Title="Чат"
+             NavigatedTo="ContentPage_NavigatedTo">
     <RefreshView Margin="10" IsRefreshing="{Binding IsRefreshing}">
         <Grid>
             <Grid.RowDefinitions>
@@ -24,7 +25,7 @@
                         Margin="10,0,0,0"
                         FontAttributes="Bold"
                         FontSize="20"
-                        Text="{Binding FriendInfo.UserName}"
+                        Text="{Binding FriendInfo.PhoneNumber}"
                         VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout

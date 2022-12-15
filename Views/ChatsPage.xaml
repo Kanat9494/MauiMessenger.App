@@ -5,7 +5,8 @@
              Background="Black"
              xmlns:viewModels="clr-namespace:MauiMessenger.ViewModels"
              xmlns:helper="clr-namespace:MauiMessenger.Helpers"
-             Title="Чаты">
+             Title="Чаты"
+             NavigatedTo="ContentPage_NavigatedTo">
 
     <!--NavigatedTo="ContentPage_NavigatedTo"-->
     <ContentPage.IconImageSource>

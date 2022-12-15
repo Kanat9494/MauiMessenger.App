@@ -61,6 +61,18 @@ public class ChatsViewModel : INotifyPropertyChanged, IQueryAttributable
         }
     }
 
+    public void Initialize()
+    {
+        Task.Run(async () =>
+        {
+            IsRefreshing = true;
+            await GetListFriends();
+        }).GetAwaiter().OnCompleted(() =>
+        {
+            IsRefreshing = false;
+        });
+    }
+
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
         if (query == null || query.Count == 0) return;

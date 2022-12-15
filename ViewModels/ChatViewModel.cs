@@ -52,10 +52,24 @@ public class ChatViewModel : INotifyPropertyChanged, IQueryAttributable
         }
     }
 
+    public void Initialize()
+    {
+        IsRefreshing = false;
+        Task.Run(async () =>
+        {
+            IsRefreshing = true;
+            await GetMessagesAsync();
+        }).GetAwaiter().OnCompleted(() =>
+        {
+            IsRefreshing = false; 
+        });
+    }
+
     private int fromUserId;
     private int toUserId;
     private ChatUser friendInfo;
     private ObservableCollection<Message> messages;
+    private bool isRefreshing;
 
     public int FromUserId
     {
@@ -93,6 +107,16 @@ public class ChatViewModel : INotifyPropertyChanged, IQueryAttributable
         set
         {
             messages = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public bool IsRefreshing
+    {
+        get => isRefreshing;
+        set
+        {
+            isRefreshing = value;
             OnPropertyChanged();
         }
     }
