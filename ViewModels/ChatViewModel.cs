@@ -20,14 +20,42 @@ public class ChatViewModel : INotifyPropertyChanged, IQueryAttributable
         });
     }
 
+    private ChatHub _chatHub;
+
     protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-    public ChatViewModel()
+    public ChatViewModel(ChatHub chatHub)
     {
         Messages = new ObservableCollection<Message>();
+        _chatHub = chatHub;
+
+        SendMessageCommand = new Command(async () =>
+        {
+            try
+            {
+                if (Message.Trim() != "")
+                {
+                    await _chatHub.SendMessageToUser(FromUserId, ToUserId, Message);
+
+                    Messages.Add(new Models.Message
+                    {
+                        Content = Message,
+                        FromUserId = FromUserId,
+                        ToUserId = this.ToUserId,
+                        SentDateTime = DateTime.Now,
+                    });
+
+                    Message = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                await AppShell.Current.DisplayAlert("Чат на MAUI", ex.Message, "Ок");
+            }
+        });
     }
 
     async Task GetMessagesAsync()
@@ -70,6 +98,7 @@ public class ChatViewModel : INotifyPropertyChanged, IQueryAttributable
     private ChatUser friendInfo;
     private ObservableCollection<Message> messages;
     private bool isRefreshing;
+    private string message;
 
     public int FromUserId
     {
@@ -117,6 +146,18 @@ public class ChatViewModel : INotifyPropertyChanged, IQueryAttributable
         set
         {
             isRefreshing = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public ICommand SendMessageCommand { get; set; }
+
+    public string Message
+    {
+        get => message;
+        set
+        {
+            message = value;
             OnPropertyChanged();
         }
     }
