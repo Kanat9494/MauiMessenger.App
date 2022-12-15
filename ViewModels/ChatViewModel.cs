@@ -27,10 +27,12 @@ public class ChatViewModel : INotifyPropertyChanged, IQueryAttributable
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-    public ChatViewModel(ChatHub chatHub)
+    public ChatViewModel(ChatHub chatHub)   
     {
         Messages = new ObservableCollection<Message>();
         _chatHub = chatHub;
+        _chatHub.AddReceivedMessageHandler(OnReceiveMessage);
+        _chatHub.Connect();
 
         SendMessageCommand = new Command(async () =>
         {
@@ -90,6 +92,17 @@ public class ChatViewModel : INotifyPropertyChanged, IQueryAttributable
         }).GetAwaiter().OnCompleted(() =>
         {
             IsRefreshing = false; 
+        });
+    }
+
+    private void OnReceiveMessage(int fromuserId, string message)
+    {
+        Messages.Add(new Models.Message
+        {
+            Content = message,
+            FromUserId = ToUserId,
+            ToUserId = FromUserId,
+            SentDateTime = DateTime.Now
         });
     }
 

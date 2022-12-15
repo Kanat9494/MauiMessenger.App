@@ -2,11 +2,11 @@ namespace MauiMessenger.Views;
 
 public partial class ChatPage : ContentPage
 {
-	public ChatPage()
+	public ChatPage(ChatViewModel chatViewModel)
 	{
 		InitializeComponent();
 
-		this.BindingContext = new ChatViewModel();
+		this.BindingContext = chatViewModel;
 	}
 
 	private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
