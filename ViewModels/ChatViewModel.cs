@@ -39,7 +39,7 @@ public class ChatViewModel : INotifyPropertyChanged, IQueryAttributable
         };
 
         var response = await ServiceProvider.GetInstance().CallWebApi<MessageInitializeRequest, MessageInitializeResponse>
-            ("/api/Chat/Initialize", HttpMethod.Post, request);
+            ("/api/Message/Initialize", HttpMethod.Post, request);
 
         if (response.StatusCode == 200)
         {

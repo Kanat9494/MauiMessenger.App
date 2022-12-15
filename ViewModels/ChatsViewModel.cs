@@ -13,6 +13,23 @@ public class ChatsViewModel : INotifyPropertyChanged, IQueryAttributable
         UserInfo = new ChatUser();
         UserFriends = new ObservableCollection<ChatUser>();
         LastestMessages = new ObservableCollection<LastestMessage>();
+
+        RefreshCommand = new Command(() =>
+        {
+            Task.Run(async () =>
+            {
+                IsRefreshing = true;
+                await GetListFriends();
+            }).GetAwaiter().OnCompleted(() =>
+            {
+                IsRefreshing = false;
+            });
+        });
+
+        OpenChatPageCommand = new Command<int>(async (param) =>
+        {
+            await Shell.Current.GoToAsync($"ChatPage?fromUserId={UserInfo.UserId}&toUserId={param}");
+        });
     }
 
     private ChatUser userInfo;
@@ -101,4 +118,6 @@ public class ChatsViewModel : INotifyPropertyChanged, IQueryAttributable
     }
 
     public ICommand RefreshCommand { get; set; }
+
+    public ICommand OpenChatPageCommand { get; set; }
 }
