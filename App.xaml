@@ -11,6 +11,5 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-        <converters:FromUserIdToHorizontalOptionConverter x:Key="FromUserIdToHorizontalOptionConverter"/>
     </Application.Resources>
 </Application>
