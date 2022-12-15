@@ -71,12 +71,12 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <VerticalStackLayout>
-                            <!--<VerticalStackLayout.HorizontalOptions>
+                            <VerticalStackLayout.HorizontalOptions>
                                 <MultiBinding Converter="{StaticResource FromUserIdToHorizontalOptionConverter}">
                                     <Binding Path="FromUserId" />
                                     <Binding Path="ToUserId" Source="{RelativeSource AncestorType={x:Type viewModel:ChatViewModel}}" />
                                 </MultiBinding>
-                            </VerticalStackLayout.HorizontalOptions>-->
+                            </VerticalStackLayout.HorizontalOptions>
                             <Label
                                 Margin="5,0,5,0"
                                 FontSize="11"
@@ -84,12 +84,12 @@
                                 Text="{Binding SentDateTime, StringFormat='{0:HH:mm}'}" />
 
                             <Frame Padding="10,6,10,6" CornerRadius="10">
-                                <!--<Frame.BackgroundColor>
+                                <Frame.BackgroundColor>
                                     <MultiBinding Converter="{StaticResource FromUserIdToBackgroudColorConverter}">
                                         <Binding Path="FromUserId" />
                                         <Binding Path="ToUserId" Source="{RelativeSource AncestorType={x:Type viewModel:ChatViewModel}}" />
                                     </MultiBinding>
-                                </Frame.BackgroundColor>-->
+                                </Frame.BackgroundColor>
                                 <Label
                                     FontSize="12"
                                     Text="{Binding Content}"
